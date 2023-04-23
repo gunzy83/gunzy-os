@@ -1,18 +1,18 @@
-title: Welcome to uBlue
+title: Welcome to Gunzy OS
 properties:
   mode: "run-on-change"
 screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to Gunzy OS (Alpha)"
       icon: "/path/to/icon"
       description: |
         This guided installer will help you get started with your new system.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler!
+      title: Welcome!
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
@@ -53,39 +53,27 @@ screens:
         user: false
         system: true
       groups:
-        Core GNOME Apps:
-          description: Core system applications for the GNOME desktop environment.
+        My Packages:
+          description: Gunzy's selection of Flatpaks.
           default: true
           packages:
-            - Calculator: org.gnome.Calculator
-            - Calendar: org.gnome.Calendar
-            - Characters: org.gnome.Characters
-            - Cheese: org.gnome.Cheese
-            - Clocks: org.gnome.clocks
-            - Connections: org.gnome.Connections
-            - Contacts: org.gnome.Contacts
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Document Scanner: org.gnome.SimpleScan
-            - Document Viewer: org.gnome.Evince
-            - Extension Manager: com.mattjakeman.ExtensionManager
-            - Font Viewer: org.gnome.font-viewer
-            - Image Viewer: org.gnome.eog
-            - Logs: org.gnome.Logs
-            - Maps: org.gnome.Maps
-            - Photos (Organizer): org.gnome.Photos
-            - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
-            - Text Editor: org.gnome.TextEditor
-            - Videos (Player): org.gnome.Totem
-            - Weather: org.gnome.Weather
+            - Barrier (Software KVM): com.github.debauchee.barrier
+            - Beekeeper Studio (Database UI): io.beekeeperstudio.Studio
+            - Flameshot (Screenshots): org.flameshot.Flameshot
+            - Flatseal (Permission Manager): com.github.tchx84.Flatseal
+            - Peek (Screen Recorder): com.uploadedlobster.peek
+            - Plex Desktop: tv.plex.PlexDesktop
+            - Signal (Secure Messaging): org.signal.Signal
+            - Slack: com.slack.Slack
+            - Spotify: com.spotify.Client
+            - Yubico Authenticator: com.yubico.yubioath
         System Apps:
-          description: System applications for all desktop environments.
+          description: System applications.
           default: true
           packages:
-            - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
@@ -93,6 +81,7 @@ screens:
             - Brave: com.brave.Browser
             - Google Chrome: com.google.Chrome
             - Microsoft Edge: com.microsoft.Edge
+            - Mozilla Firefox: org.mozilla.firefox
             - Opera: com.opera.Opera
         Gaming:
           description: "Rock and Stone!"
