@@ -1,11 +1,11 @@
 # This file can only be edited inside the uBlue image's git repository.
 
 # The image will be at "ghcr.io/yourusername/name".
-name: startingpoint
+name: gunzy-os
 
 # The native container image to build on top of.
 # Warning: Non-uBlue images might not work properly, due to missing components.
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/kinoite-main
 
 # What Fedora version to use. Use an explicit version or `latest`.
 # If you use `latest`, you will be automatically updated to the next major
@@ -14,7 +14,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 fedora-version: 38
 
 # This description will be visible in the container metadata.
-description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
+description: Opinionated Fedora Kinoite OCI OS Images
 
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
@@ -48,6 +48,9 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
+    - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    - https://copr.fedorainfracloud.org/coprs/gunzy83/gunzy-os/repo/fedora-%FEDORA_VERSION%/gunzy83-gunzy-os-fedora-%FEDORA_VERSION%.repo
+
 
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -64,6 +67,21 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
+    - libappindicator
+    - pam-u2f
+    - pamu2fcfg
+    - yakuake
+    - zsh
+    - numix-icon-theme-circle
+    - gparted
+    - kvantum
+    - 1password-cli
+    - tailscale
+    - solaar
+    - applet-window-appmenu
+    - applet-window-title
+    - applet-betterinlineclock
+    - cherry-kde-theme
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -87,5 +105,13 @@ firstboot:
   # the "just setup-flatpaks" command from our "custom.just" template file.
   # This is just an example selection:
   flatpaks:
-    - io.github.celluloid_player.Celluloid
-    - org.kde.krita
+    - com.github.tchx84.Flatseal
+    - com.slack.Slack
+    - com.spotify.Client
+    - com.yubico.yubioath
+    - com.github.debauchee.barrier
+    - com.uploadedlobster.peek
+    - org.flameshot.Flameshot
+    - io.beekeeperstudio.Studio
+    - tv.plex.PlexDesktop
+    - org.signal.Signal
