@@ -26,21 +26,24 @@ modules:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       - https://copr.fedorainfracloud.org/coprs/gunzy83/gunzy-os/repo/fedora-%OS_VERSION%/gunzy83-gunzy-os-fedora-%OS_VERSION%.repo
     install:
-      - starship
-      - libappindicator
-      - pam-u2f
-      - pamu2fcfg
-      - yakuake
-      - zsh
-      - numix-icon-theme-circle
-      - gparted
-      - kvantum
-      - tailscale
-      - solaar
+      - applet-betterinlineclock
       - applet-window-appmenu
       - applet-window-title
-      - applet-betterinlineclock
       - cherry-kde-theme
+      - crudini
+      - git
+      - gparted
+      - kvantum
+      - libappindicator
+      - numix-icon-theme-circle
+      - pam-u2f
+      - pamu2fcfg
+      - solaar
+      - starship
+      - tailscale
+      - vim
+      - yakuake
+      - zsh
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -54,6 +57,7 @@ modules:
   - type: script
     scripts:
       - install-wavebox.sh
+      - install-chezmoi.sh
       - setup-pam-u2f.sh
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
