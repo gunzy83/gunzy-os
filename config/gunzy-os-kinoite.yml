@@ -29,6 +29,7 @@ modules:
       - applet-betterinlineclock
       - applet-window-appmenu
       - applet-window-title
+      - bind-utils
       - cherry-kde-theme
       - crudini
       - git
