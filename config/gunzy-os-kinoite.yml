@@ -26,6 +26,7 @@ modules:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       - https://copr.fedorainfracloud.org/coprs/gunzy83/gunzy-os/repo/fedora-%OS_VERSION%/gunzy83-gunzy-os-fedora-%OS_VERSION%.repo
     install:
+      - ansible
       - applet-betterinlineclock
       - applet-window-appmenu
       - applet-window-title
@@ -53,7 +54,6 @@ modules:
     install:
       - 1password # install 1Password (stable) and `op` CLI tool
       - ublue-os-wallpapers
-      - flatpaksync # allows synchronization of user-installed flatpaks, see separate documentation section
 
   - type: script
     scripts:
