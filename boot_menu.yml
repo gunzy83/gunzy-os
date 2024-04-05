@@ -1,5 +1,0 @@
-ublue_variants:
-  - label: gunzy83/gunzy-os
-    ks: /kickstart/ublue-os.ks
-    flavors:
-      - label: gunzy-os
